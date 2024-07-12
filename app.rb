@@ -21,5 +21,13 @@ get("/rock") do
     @outcome = "won"
   end
 
-erb(:zebra)
+erb(:rock)
+end
+
+get("/paper") do
+  erb(:paper)
+end
+
+get("/scissors") do
+  erb(:scissors)
 end
