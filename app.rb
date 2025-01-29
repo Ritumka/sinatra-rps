@@ -7,8 +7,16 @@ get("/") do
   erb(:homepage)
 end
 
-get("/rock")
-  @user_move = ["rock", "paper", "scissors"].sample
+@comp_move = ["rock", "paper", "scissors"].sample
 
+
+get("/rock")
+  if @comp_move == "rock"
+    @outcome = "We tied!"
+  elsif @comp_move == "paper"
+    @outcome = "We win!"
+  else @outcome = "We lost!"
+  end
+    
   erb(:rock)
 end
